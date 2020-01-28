@@ -2,6 +2,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     padding: 20px 50px;
 }
+* {
+    box-sizing: border-box;
+}
 
 a {
     text-decoration: none;
