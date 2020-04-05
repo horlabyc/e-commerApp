@@ -8,8 +8,10 @@ const Header = ({ currentUser }) => {
     return (
         <div className="header">
             <Link className="logo-container" to="/">
-               <Logo />  
+               <Logo /> 
             </Link>
+            {currentUser? (<p>Welcome {currentUser.displayName}</p> ): null}
+            
             <div className="options">
                 <Link to="/shop" className="option">SHOP</Link>
                 <Link to="/shop" className="option">CONTACT</Link>
