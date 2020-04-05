@@ -9,13 +9,13 @@ $main-color: black;
 
 .group {
   position: relative;
-  margin: 45px 0;
+  margin: 17px 0;
 
   .form-input {
     background: none !important;
     background-color: white !important;
     color: $sub-color !important;
-    font-size: 18px;
+    font-size: 0.9rem;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
@@ -23,6 +23,7 @@ $main-color: black;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
+    font-family: 'Montserrat', sans-serif;
 
     &:focus {
       outline: none;

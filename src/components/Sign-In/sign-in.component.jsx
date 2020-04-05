@@ -2,7 +2,7 @@ import React from 'react';
 import './sign-in.styles.scss';
 import FormInput from '../Form-Input/form-input.component';
 import CustomButton from '../Custom-Button/custom-button.component';
-import { signInWithGoogle } from '../../Firebase/firebase.util';
+import { auth, provider } from '../../Firebase/firebase.util';
 
 class SignIn extends React.Component {
     constructor(){
@@ -36,6 +36,7 @@ class SignIn extends React.Component {
                     required
                     handleChange = {this.handleChange} 
                     label="Email"
+                    autoComplete="no"
                     value={email}/>
                     <FormInput 
                     name="password" 
@@ -43,10 +44,11 @@ class SignIn extends React.Component {
                     handleChange = {this.handleChange}  
                     required 
                     label="Password"
+                    autoComplete="no"
                     value={password}/>
                     <div className="buttons">
                         <CustomButton type="submit">Sign In</CustomButton>
-                        <CustomButton isGoogleSignIn onClick = {() => signInWithGoogle }>Sign In with Google</CustomButton>
+                        {/* <CustomButton isGoogleSignIn onClick = {() => auth.signInWithPopup(provider) }>Sign In with Google</CustomButton> */}
                     </div>
                 </form>
             </div>
