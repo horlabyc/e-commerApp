@@ -13,8 +13,15 @@ class SignIn extends React.Component {
         }
     }
 
-    handleSubmit = event => {
-        event.preventDefault()
+    handleSubmit = async event => {
+        event.preventDefault();
+        const { email, password } = this.state;
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.setState({ email: '', password: ''});
+        } catch(error) {
+            console.error(error)
+        }
         this.setState({ email: '', password: ''});
     }
 
@@ -47,7 +54,7 @@ class SignIn extends React.Component {
                     autoComplete="no"
                     value={password}/>
                     <div className="buttons">
-                        <CustomButton type="submit">Sign In</CustomButton>
+                        <CustomButton type="submit" onClick={this.handleSubmit}>Sign In</CustomButton>
                         {/* <CustomButton isGoogleSignIn onClick = {() => auth.signInWithPopup(provider) }>Sign In with Google</CustomButton> */}
                     </div>
                 </form>
