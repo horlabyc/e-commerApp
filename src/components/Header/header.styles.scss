@@ -10,7 +10,11 @@
       width: 70px;
       padding: 25px;
     }
-  
+    .userName {
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
     .options {
       width: 50%;
       height: 100%;
